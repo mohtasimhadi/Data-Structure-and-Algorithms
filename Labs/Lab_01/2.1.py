@@ -25,9 +25,9 @@ def heapSort(arr):
         arr = heapify(arr, i, 0)
     return arr
 
-arr = [0]*1000
+arr = []
 for i in range(1000):
-    arr[i] = int(input())
+    arr.append(int(input()))
     arr2 = heapSort(arr[0:i+1])
     if len(arr2)%2 != 0:
         print(arr2[int(len(arr2)/2)])

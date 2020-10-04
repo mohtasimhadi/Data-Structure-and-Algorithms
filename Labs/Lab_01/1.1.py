@@ -33,21 +33,18 @@ def mergeSort(arr):
 
 n = int(input())
 k = int(input())
-arr = [0]*n
-arr2 = [0]*n*n
+
+arr = []
+arr2 = []
+
 for i in range(n):
-    arr[i] = int(input())
+    arr.append(int(input()))
 
 x = 0
 for i in range(n):
     for j in range(n):
-        arr2[x] = str(arr[i])+" "+str(arr[j])
+        arr2.append(str(arr[i])+" "+str(arr[j]))
         x += 1
 arr2 = mergeSort(arr2)
+
 print(arr2[k-1])
-
-# arr = mergeSort(arr*4)
-
-# print(arr)
-
-# print(arr[int(k*4/n)], arr[int(k-1)])
