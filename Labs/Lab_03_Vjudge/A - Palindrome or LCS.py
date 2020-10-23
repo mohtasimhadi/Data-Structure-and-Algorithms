@@ -1,4 +1,5 @@
 def rec(i, j):
+    global arr, dp, n
     if j <= i:
         return 0
     if dp[i][j] != -1:
@@ -8,7 +9,10 @@ def rec(i, j):
         return dp[i][j]
     dp[i][j] = 1 + min(rec(i+1, j), rec(i, j-1))
     return dp[i][j]
-dp = [[-1]*5005]*5005
-n = int(input())
-arr = str(input())
-print(rec(0, n-1))
+try:
+    n = int(input())
+    arr = str(input())
+    dp = [[(-1) for j in range(n)] for i in range(n)]
+    print(rec(0, n-1))
+except:
+    pass
